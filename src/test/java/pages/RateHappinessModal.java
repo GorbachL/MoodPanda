@@ -4,6 +4,8 @@ import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
 public class RateHappinessModal extends BasePage {
@@ -45,9 +47,10 @@ public class RateHappinessModal extends BasePage {
         $(COMMENT_CSS).click();
         $(COMMENT_CSS).sendKeys(comment);
 
-        $(By.className(".ButtonUpdate")).click();
+        $(byXpath("//*[@class='btn btn-sm btn-primary ButtonUpdate']")).click();
 
-        //нажать доне
+        $(byText("Done")).click();
+
         return this;
     }
 }

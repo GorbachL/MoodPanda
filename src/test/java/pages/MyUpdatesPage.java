@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class MyUpdatesPage extends BasePage {
 
     public static final String URL = "https://moodpanda.com/Feed/?Me=1";
-    public static final String TOOLBAR_CSS = "#";
+    public static final String TOOLBAR_CSS = ".navbar-hidesmalla";
     public static final String UPDATE_MOOD_CSS = "#LinkUpdate";
 
 
