@@ -57,25 +57,25 @@ public class MyUpdatesPage extends BasePage {
         $(CLICK_ON_COMMENT_CSS).click();
         $(REPLY_INPUT_CSS).shouldBe(Condition.visible).click();
         $(REPLY_INPUT_CSS).sendKeys(replyComment);
-        log.info("Reply on Comment" + replyComment);
+        log.info("Reply on Comment << " + replyComment + " >>");
         $(REPLY_BUTTON_CSS).click();
     }
 
     public void addHug() {
         String countHugsBefore = $(HUGS_COUNT_CSS).getText();
-        log.info(countHugsBefore);
+        log.info("Count HUG before text >> " + countHugsBefore);
         $(HUG_UNDER_COMMENT_CSS).click();
         refresh();
         String countHugsAfter = $(HUGS_COUNT_CSS).getText();
-        log.info(countHugsAfter);
+        log.info("Count HUG after text >> " + countHugsAfter);
     }
 
     public void clickFollow() {
         String countFollowersBefore = $(FOLLOWERS_COUNT_CSS).getText();
-        log.info(countFollowersBefore);
+        log.info("Count Followers before text >> " + countFollowersBefore);
         $(FOLLOW_UNDER_COMMENT_CSS).click();
         refresh();
         String countFollowersAfter = $(FOLLOWERS_COUNT_CSS).getText();
-        log.info(countFollowersAfter);
+        log.info("Count Followers before text >> " + countFollowersAfter);
     }
 }

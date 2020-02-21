@@ -62,7 +62,7 @@ public class RateHappinessModal extends BasePage {
 
         refresh();
         $(byText(comment)).shouldBe(Condition.visible);
-        log.info("Comment" + comment + " should be displayed on the page");
+        log.info("Comment << " + comment + " >> should be displayed on the page");
         return this;
     }
 }
