@@ -21,6 +21,7 @@ public class MyUpdatesPage extends BasePage {
     private static final String REPLY_INPUT_CSS = ".form-control.InputReply";
     private static final String REPLY_BUTTON_CSS = ".btn-sm.ButtonReply";
     private static final String HUG_UNDER_COMMENT_CSS = ".ButtonHug .glyphicon.glyphicon-heart";
+    private static final String HUG_UNDER_COMMENT_COUNT_CSS = ".media-controls-bottom .ButtonHug";
     private static final String HUGS_COUNT_CSS = ".col-xs-6.col-md-3 .glyphicon.glyphicon-heart";
     private static final String FOLLOW_UNDER_COMMENT_CSS = ".FeedFollow .glyphicon.glyphicon-star";
     private static final String FOLLOWERS_COUNT_CSS = ".col-xs-6.col-md-3 .FollowLiteral";
