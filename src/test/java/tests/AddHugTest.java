@@ -1,8 +1,6 @@
 package tests;
 
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
-import steps.MoodSteps;
 
 public class AddHugTest extends BaseTest {
 

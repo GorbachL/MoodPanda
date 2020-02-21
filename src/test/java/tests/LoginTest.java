@@ -12,5 +12,7 @@ public class LoginTest extends BaseTest {
     public void loginUsingCorrectCredentials() {
         loginSteps
                 .login("lenagmailinator.com", "qwerty12345");
+        moodSteps
+                .openMyMood();
     }
 }

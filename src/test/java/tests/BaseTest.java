@@ -14,6 +14,7 @@ public class BaseTest {
 
     LoginSteps loginSteps;
     MoodSteps moodSteps;
+
     @BeforeClass
     public void setupDriver() {
         //Configuration.headless = true;
