@@ -9,7 +9,6 @@ public class UpdateMoodTest extends BaseTest {
     public void updateMyMoodTest() {
         loginSteps
                 .login("lenagmailinator.com", "qwerty12345");
-        MoodSteps moodSteps = new MoodSteps();
         moodSteps
                 .openMyMood()
                 .updateMood(6, "new NEW comment");

@@ -12,9 +12,5 @@ public class LoginTest extends BaseTest {
     public void loginUsingCorrectCredentials() {
         loginSteps
                 .login("lenagmailinator.com", "qwerty12345");
-        MoodSteps moodSteps = new MoodSteps();
-        moodSteps
-                .openMyMood()
-                .updateMood(8, "new comment");
     }
 }

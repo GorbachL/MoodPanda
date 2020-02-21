@@ -9,7 +9,6 @@ public class FollowersTest extends BaseTest {
     public void clickFollowTest() {
         loginSteps
                 .login("lenagmailinator.com", "qwerty12345");
-        MoodSteps moodSteps = new MoodSteps();
         moodSteps
                 .openMyMood()
                 .clickFollow();

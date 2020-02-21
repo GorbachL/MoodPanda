@@ -5,8 +5,7 @@ import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.AfterMethod;
 import utils.AllureUtils;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 @Log4j2
 public class LoginPage extends BasePage {
@@ -29,7 +28,9 @@ public class LoginPage extends BasePage {
     public LoginPage login(String email, String password) {
         log.info("User logged in");
         $(EMAIL_CSS).sendKeys(email);
+        sleep(1000);
         $(PASSWORD_CSS).sendKeys(password);
+        sleep(1000);
         $(LOGIN_BUTTON_CSS).click();
         return this;
     }
