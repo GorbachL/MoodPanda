@@ -16,6 +16,8 @@ public class LoginPage extends BasePage {
     public static final String EMAIL_CSS = "#ContentPlaceHolderContent_TextBoxEmail";
     public static final String PASSWORD_CSS = "#ContentPlaceHolderContent_TextBoxPassword";
 
+    private static final String TOOLBAR_CSS = ".navbar-hidesmalla";
+
     public LoginPage openPage() {
         open(URL);
         isPageOpened();
@@ -42,6 +44,8 @@ public class LoginPage extends BasePage {
         AllureUtils.takeScreenshot(getWebDriver());
 
         log.info("User logged in");
+
+        $(TOOLBAR_CSS).shouldBe(Condition.visible);
         return this;
     }
 }

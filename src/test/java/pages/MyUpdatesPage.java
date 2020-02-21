@@ -3,10 +3,12 @@ package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import lombok.extern.log4j.Log4j2;
+import utils.AllureUtils;
 
 import java.util.List;
 
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 @Log4j2
 public class MyUpdatesPage extends BasePage {
@@ -65,18 +67,22 @@ public class MyUpdatesPage extends BasePage {
     public void addHug() {
         String countHugsBefore = $(HUG_UNDER_COMMENT_COUNT_CSS).getText();
         log.info("Count HUG before text >> " + countHugsBefore);
+        AllureUtils.takeScreenshot(getWebDriver());
         $(HUG_UNDER_COMMENT_CSS).click();
         refresh();
         String countHugsAfter = $(HUG_UNDER_COMMENT_COUNT_CSS).getText();
         log.info("Count HUG after text >> " + countHugsAfter);
+        AllureUtils.takeScreenshot(getWebDriver());
     }
 
     public void clickFollow() {
         String countFollowersBefore = $(FOLLOWERS_COUNT_CSS).getText();
         log.info("Count Followers before text >> " + countFollowersBefore);
+        AllureUtils.takeScreenshot(getWebDriver());
         $(FOLLOW_UNDER_COMMENT_CSS).click();
         refresh();
         String countFollowersAfter = $(FOLLOWERS_COUNT_CSS).getText();
         log.info("Count Followers before text >> " + countFollowersAfter);
+        AllureUtils.takeScreenshot(getWebDriver());
     }
 }
