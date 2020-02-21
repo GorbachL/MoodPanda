@@ -24,7 +24,7 @@ public class BaseTest {
         loginSteps = new LoginSteps();
     }
 
-    @AfterMethod (alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void closeBrowser() {
         getWebDriver().quit();
     }
