@@ -1,20 +1,17 @@
 package tests;
 
-import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.Test;
 import steps.MoodSteps;
 
-
-@Log4j2
-public class LoginTest extends BaseTest {
+public class FollowersTest extends BaseTest {
 
     @Test
-    public void loginUsingCorrectCredentials() {
+    public void clickFollowTest() {
         loginSteps
                 .login("lenagmailinator.com", "qwerty12345");
         MoodSteps moodSteps = new MoodSteps();
         moodSteps
                 .openMyMood()
-                .updateMood(8, "new comment");
+                .clickFollow();
     }
 }

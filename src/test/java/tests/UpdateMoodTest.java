@@ -1,15 +1,12 @@
 package tests;
 
-import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.Test;
 import steps.MoodSteps;
 
-
-@Log4j2
-public class LoginTest extends BaseTest {
+public class UpdateMoodTest extends BaseTest {
 
     @Test
-    public void loginUsingCorrectCredentials() {
+    public void updateMyMoodTest() {
         loginSteps
                 .login("lenagmailinator.com", "qwerty12345");
         MoodSteps moodSteps = new MoodSteps();
