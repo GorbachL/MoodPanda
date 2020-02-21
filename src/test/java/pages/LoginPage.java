@@ -33,10 +33,4 @@ public class LoginPage extends BasePage {
         $(LOGIN_BUTTON_CSS).click();
         return this;
     }
-
-    @AfterMethod
-    public LoginPage closePage() {
-        closePage();
-        return this;
-    }
 }

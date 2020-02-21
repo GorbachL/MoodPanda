@@ -1,9 +1,12 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import steps.LoginSteps;
+
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 @Listeners(TestListener.class)
 public class BaseTest {
@@ -19,5 +22,10 @@ public class BaseTest {
         //Configuration.clickViaJs = true;
         Configuration.screenshots = true;
         loginSteps = new LoginSteps();
+    }
+
+    @AfterMethod (alwaysRun = true)
+    public void closeBrowser() {
+        getWebDriver().quit();
     }
 }
