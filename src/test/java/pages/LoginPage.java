@@ -6,6 +6,7 @@ import org.testng.annotations.AfterMethod;
 import utils.AllureUtils;
 
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 @Log4j2
 public class LoginPage extends BasePage {
@@ -26,12 +27,21 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage login(String email, String password) {
-        log.info("User logged in");
+
+        AllureUtils.takeScreenshot(getWebDriver());
         $(EMAIL_CSS).sendKeys(email);
         sleep(1000);
+
+        AllureUtils.takeScreenshot(getWebDriver());
         $(PASSWORD_CSS).sendKeys(password);
         sleep(1000);
+
+        AllureUtils.takeScreenshot(getWebDriver());
         $(LOGIN_BUTTON_CSS).click();
+
+        AllureUtils.takeScreenshot(getWebDriver());
+
+        log.info("User logged in");
         return this;
     }
 }
