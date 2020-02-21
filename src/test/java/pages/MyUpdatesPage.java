@@ -63,11 +63,11 @@ public class MyUpdatesPage extends BasePage {
     }
 
     public void addHug() {
-        String countHugsBefore = $(HUGS_COUNT_CSS).getText();
+        String countHugsBefore = $(HUG_UNDER_COMMENT_COUNT_CSS).getText();
         log.info("Count HUG before text >> " + countHugsBefore);
         $(HUG_UNDER_COMMENT_CSS).click();
         refresh();
-        String countHugsAfter = $(HUGS_COUNT_CSS).getText();
+        String countHugsAfter = $(HUG_UNDER_COMMENT_COUNT_CSS).getText();
         log.info("Count HUG after text >> " + countHugsAfter);
     }
 
