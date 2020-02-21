@@ -2,6 +2,8 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import lombok.extern.log4j.Log4j2;
+import org.testng.annotations.AfterMethod;
+import utils.AllureUtils;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -29,6 +31,12 @@ public class LoginPage extends BasePage {
         $(EMAIL_CSS).sendKeys(email);
         $(PASSWORD_CSS).sendKeys(password);
         $(LOGIN_BUTTON_CSS).click();
+        return this;
+    }
+
+    @AfterMethod
+    public LoginPage closePage() {
+        closePage();
         return this;
     }
 }
