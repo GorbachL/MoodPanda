@@ -57,7 +57,7 @@ public class MyUpdatesPage extends BasePage {
         $(CLICK_ON_COMMENT_CSS).click();
         $(REPLY_INPUT_CSS).shouldBe(Condition.visible).click();
         $(REPLY_INPUT_CSS).sendKeys(replyComment);
-        log.info("Reply on Comment << " + replyComment + " >>");
+        log.info("Reply on Comment is << " + replyComment + " >>");
         $(REPLY_BUTTON_CSS).click();
     }
 
