@@ -50,7 +50,7 @@ public class MyUpdatesPage extends BasePage {
         $(DELETE_MOOD_CSS).click();
         refresh();
         log.info("Mood block should be deleted");
-        $$(ADDED_BLOCKS_MOOD_CSS).shouldHaveSize(countMoodBlocks);
+        $$(ADDED_BLOCKS_MOOD_CSS).shouldHaveSize(countMoodBlocks - 1);
         return this;
     }
 
