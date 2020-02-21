@@ -12,6 +12,6 @@ public class UpdateMoodTest extends BaseTest {
         MoodSteps moodSteps = new MoodSteps();
         moodSteps
                 .openMyMood()
-                .updateMood(8, "new comment");
+                .updateMood(6, "new NEW comment");
     }
 }
