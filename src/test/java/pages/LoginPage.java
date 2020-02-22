@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.Condition;
+import com.google.gson.annotations.Until;
 import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.AfterMethod;
 import utils.AllureUtils;
@@ -33,8 +34,8 @@ public class LoginPage extends BasePage {
         AllureUtils.takeScreenshot(getWebDriver());
         $(EMAIL_CSS).click();
         //$(EMAIL_CSS).sendKeys(email);
-        $(EMAIL_CSS).val(email);
-        sleep(1000);
+        $(EMAIL_CSS).val(email).shouldBe(Condition.visible);
+        //sleep(1000);
 
         AllureUtils.takeScreenshot(getWebDriver());
         $(PASSWORD_CSS).click();
