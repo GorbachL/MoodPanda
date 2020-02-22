@@ -41,11 +41,10 @@ public class LoginPage extends BasePage {
         AllureUtils.takeScreenshot(getWebDriver());
         $(LOGIN_BUTTON_CSS).click();
 
-        AllureUtils.takeScreenshot(getWebDriver());
-
         log.info("User logged in");
 
         $(TOOLBAR_CSS).shouldBe(Condition.visible);
+        AllureUtils.takeScreenshot(getWebDriver());
         return this;
     }
 }

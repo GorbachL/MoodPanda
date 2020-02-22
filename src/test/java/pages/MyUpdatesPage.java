@@ -49,10 +49,12 @@ public class MyUpdatesPage extends BasePage {
 
     public MyUpdatesPage deleteMyMood() {
         int countMoodBlocks = $$(ADDED_BLOCKS_MOOD_CSS).size();
+        AllureUtils.takeScreenshot(getWebDriver());
         $(DELETE_MOOD_CSS).click();
         refresh();
         log.info("Mood block should be deleted");
         $$(ADDED_BLOCKS_MOOD_CSS).shouldHaveSize(countMoodBlocks - 1);
+        AllureUtils.takeScreenshot(getWebDriver());
         return this;
     }
 
@@ -62,6 +64,7 @@ public class MyUpdatesPage extends BasePage {
         $(REPLY_INPUT_CSS).sendKeys(replyComment);
         log.info("Reply on Comment is << " + replyComment + " >>");
         $(REPLY_BUTTON_CSS).click();
+        AllureUtils.takeScreenshot(getWebDriver());
     }
 
     public void addHug() {
