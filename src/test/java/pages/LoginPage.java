@@ -31,6 +31,7 @@ public class LoginPage extends BasePage {
     public LoginPage login(String email, String password) {
 
         AllureUtils.takeScreenshot(getWebDriver());
+        $(EMAIL_CSS).click();
         $(EMAIL_CSS).sendKeys(email);
         sleep(1000);
 

@@ -27,6 +27,7 @@ public class MyUpdatesPage extends BasePage {
     private static final String HUGS_COUNT_CSS = ".col-xs-6.col-md-3 .glyphicon.glyphicon-heart";
     private static final String FOLLOW_UNDER_COMMENT_CSS = ".FeedFollow .glyphicon.glyphicon-star";
     private static final String FOLLOWERS_COUNT_CSS = ".col-xs-6.col-md-3 .FollowLiteral";
+    private static final String UNFOLLOW_BUTTON_CSS = ".ButtonUnfollow.btn.btn-info.btn-xs";
 
 
     public MyUpdatesPage openPage() {
@@ -83,6 +84,17 @@ public class MyUpdatesPage extends BasePage {
         log.info("Count Followers before text >> " + countFollowersBefore);
         AllureUtils.takeScreenshot(getWebDriver());
         $(FOLLOW_UNDER_COMMENT_CSS).click();
+        refresh();
+        String countFollowersAfter = $(FOLLOWERS_COUNT_CSS).getText();
+        log.info("Count Followers before text >> " + countFollowersAfter);
+        AllureUtils.takeScreenshot(getWebDriver());
+    }
+
+    public void clickUnfollow() {
+        String countFollowersBefore = $(FOLLOWERS_COUNT_CSS).getText();
+        log.info("Count Followers before text >> " + countFollowersBefore);
+        AllureUtils.takeScreenshot(getWebDriver());
+        $(UNFOLLOW_BUTTON_CSS).click();
         refresh();
         String countFollowersAfter = $(FOLLOWERS_COUNT_CSS).getText();
         log.info("Count Followers before text >> " + countFollowersAfter);

@@ -53,4 +53,11 @@ public class MoodSteps {
                 .clickFollow();
         return this;
     }
+
+    @Step("Click Unfollow")
+    public MoodSteps clickUnfollow() {
+        myUpdatesPage
+                .clickUnfollow();
+        return this;
+    }
 }
