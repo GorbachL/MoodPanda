@@ -32,12 +32,14 @@ public class LoginPage extends BasePage {
 
         AllureUtils.takeScreenshot(getWebDriver());
         $(EMAIL_CSS).click();
-        $(EMAIL_CSS).sendKeys(email);
+        //$(EMAIL_CSS).sendKeys(email);
+        $(EMAIL_CSS).val(email);
         sleep(1000);
 
         AllureUtils.takeScreenshot(getWebDriver());
         $(PASSWORD_CSS).click();
-        $(PASSWORD_CSS).sendKeys(password);
+       // $(PASSWORD_CSS).sendKeys(password);
+        $(PASSWORD_CSS).val(password);
         sleep(1000);
 
         AllureUtils.takeScreenshot(getWebDriver());
