@@ -34,14 +34,14 @@ public class LoginPage extends BasePage {
         AllureUtils.takeScreenshot(getWebDriver());
         $(EMAIL_CSS).click();
         sleep(1000);
-        //$(EMAIL_CSS).sendKeys(email);
-        $(EMAIL_CSS).val(email).shouldHave(Condition.value(email));
+        $(EMAIL_CSS).sendKeys(email);
+        $(EMAIL_CSS).shouldHave(Condition.value(email));
         sleep(1000);
 
         AllureUtils.takeScreenshot(getWebDriver());
         $(PASSWORD_CSS).click();
         // $(PASSWORD_CSS).sendKeys(password);
-        $(PASSWORD_CSS).val(password).shouldHave(Condition.value(password));
+        $(PASSWORD_CSS).val(password);
         sleep(1000);
 
         AllureUtils.takeScreenshot(getWebDriver());
