@@ -10,6 +10,7 @@ public class UnfollowTest extends BaseTest {
                 .login("lenagmailinator.com", "qwerty12345");
         moodSteps
                 .openMyMood()
+                .clickFollow()
                 .clickUnfollow();
     }
 }

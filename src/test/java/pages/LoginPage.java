@@ -39,8 +39,8 @@ public class LoginPage extends BasePage {
 
         AllureUtils.takeScreenshot(getWebDriver());
         $(PASSWORD_CSS).click();
-       // $(PASSWORD_CSS).sendKeys(password);
-        $(PASSWORD_CSS).val(password);
+        // $(PASSWORD_CSS).sendKeys(password);
+        $(PASSWORD_CSS).val(password).shouldHave(Condition.value(password));
         sleep(1000);
 
         AllureUtils.takeScreenshot(getWebDriver());
