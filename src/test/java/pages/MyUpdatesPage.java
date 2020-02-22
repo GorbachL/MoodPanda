@@ -3,6 +3,7 @@ package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import lombok.extern.log4j.Log4j2;
+import org.openqa.selenium.By;
 import utils.AllureUtils;
 
 import java.util.List;
@@ -28,7 +29,7 @@ public class MyUpdatesPage extends BasePage {
     private static final String FOLLOW_UNDER_COMMENT_CSS = ".FeedFollow .glyphicon.glyphicon-star";
     private static final String FOLLOWERS_COUNT_CSS = ".col-xs-6.col-md-3 .FollowLiteral";
     private static final String UNFOLLOW_BUTTON_CSS = ".ButtonUnfollow.btn.btn-info.btn-xs";
-
+    private By VIEW_FOLLOWERS = By.xpath("//a[text()='View']");
 
     public MyUpdatesPage openPage() {
         open(URL);
@@ -94,10 +95,21 @@ public class MyUpdatesPage extends BasePage {
         String countFollowersBefore = $(FOLLOWERS_COUNT_CSS).getText();
         log.info("Count Followers before text >> " + countFollowersBefore);
         AllureUtils.takeScreenshot(getWebDriver());
+        $(FOLLOWERS_COUNT_CSS).hover();
         $(UNFOLLOW_BUTTON_CSS).click();
         refresh();
         String countFollowersAfter = $(FOLLOWERS_COUNT_CSS).getText();
-        log.info("Count Followers before text >> " + countFollowersAfter);
+        log.info("Count Followers after text >> " + countFollowersAfter);
+        AllureUtils.takeScreenshot(getWebDriver());
+    }
+
+    public void checkFollowers() {
+        String countFollowersBefore = $(FOLLOWERS_COUNT_CSS).getText();
+        log.info("Count Followers before text >> " + countFollowersBefore);
+        AllureUtils.takeScreenshot(getWebDriver());
+        $(FOLLOWERS_COUNT_CSS).hover();
+        $(VIEW_FOLLOWERS).click();
+        log.info("Followers >> " + countFollowersBefore);
         AllureUtils.takeScreenshot(getWebDriver());
     }
 }

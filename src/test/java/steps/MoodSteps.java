@@ -60,4 +60,11 @@ public class MoodSteps {
                 .clickUnfollow();
         return this;
     }
+
+    @Step("Verify Followers")
+    public MoodSteps clickViewToSeeFollowers() {
+        myUpdatesPage
+                .checkFollowers();
+        return this;
+    }
 }
