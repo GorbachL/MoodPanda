@@ -93,7 +93,7 @@ public class MyUpdatesPage extends BasePage {
         log.info("Count Followers before text >> " + countFollowersBefore);
         AllureUtils.takeScreenshot(getWebDriver());
         $(FOLLOWERS_COUNT_CSS).hover();
-        $(UNFOLLOW_BUTTON_CSS).click();
+        $(UNFOLLOW_BUTTON_CSS).shouldBe(Condition.visible).click();
         refresh();
         String countFollowersAfter = $(FOLLOWERS_COUNT_CSS).getText();
         log.info("Count Followers after text >> " + countFollowersAfter);
