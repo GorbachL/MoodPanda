@@ -10,6 +10,6 @@ public class FollowersTest extends BaseTest {
                 .login("lenagmailinator.com", "qwerty12345");
         moodSteps
                 .openMyMood()
-                .clickFollow();
+                .clickFollow(4, "comment for follower");
     }
 }

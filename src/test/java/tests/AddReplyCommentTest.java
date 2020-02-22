@@ -10,6 +10,6 @@ public class AddReplyCommentTest extends BaseTest {
                 .login("lenagmailinator.com", "qwerty12345");
         moodSteps
                 .openMyMood()
-                .addReplyComment("reply comment");
+                .addReplyComment(9, "second comment", "reply comment");
     }
 }

@@ -34,7 +34,10 @@ public class MoodSteps {
     }
 
     @Step("Add reply comment")
-    public MoodSteps addReplyComment(String replyComment) {
+    public MoodSteps addReplyComment(int moodRate, String comment, String replyComment) {
+        myUpdatesPage
+                .clickUpdateMood()
+                .updateMood(moodRate, comment);
         myUpdatesPage
                 .replyOnComment(replyComment);
         return this;
@@ -48,7 +51,10 @@ public class MoodSteps {
     }
 
     @Step("Click Follow")
-    public MoodSteps clickFollow() {
+    public MoodSteps clickFollow(int moodRate, String comment) {
+        myUpdatesPage
+                .clickUpdateMood()
+                .updateMood(moodRate, comment);
         myUpdatesPage
                 .clickFollow();
         return this;
