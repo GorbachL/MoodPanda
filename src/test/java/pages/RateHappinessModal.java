@@ -50,11 +50,11 @@ public class RateHappinessModal extends BasePage {
         }
 
         $(COMMENT_CSS).click();
-        log.info("Add comment");
+        sleep(1000);
         $(COMMENT_CSS).sendKeys(comment);
         $(COMMENT_CSS).shouldHave(Condition.value(comment));
         log.info("User added comment");
-
+        sleep(1000);
         log.info("Save comment");
         $(byXpath("//*[@class='btn btn-sm btn-primary ButtonUpdate']")).click();
 
