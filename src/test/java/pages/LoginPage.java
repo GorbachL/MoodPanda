@@ -34,7 +34,7 @@ public class LoginPage extends BasePage {
         AllureUtils.takeScreenshot(getWebDriver());
         $(EMAIL_CSS).click();
         //$(EMAIL_CSS).sendKeys(email);
-        $(EMAIL_CSS).val(email).shouldBe(Condition.visible);
+        $(EMAIL_CSS).val(email).shouldHave(Condition.text(email));
         sleep(1000);
 
         AllureUtils.takeScreenshot(getWebDriver());
