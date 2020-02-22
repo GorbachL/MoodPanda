@@ -35,7 +35,7 @@ public class LoginPage extends BasePage {
         $(EMAIL_CSS).click();
         //$(EMAIL_CSS).sendKeys(email);
         $(EMAIL_CSS).val(email).shouldBe(Condition.visible);
-        //sleep(1000);
+        sleep(1000);
 
         AllureUtils.takeScreenshot(getWebDriver());
         $(PASSWORD_CSS).click();
