@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
@@ -31,4 +32,5 @@ public class BaseTest {
     public void closeBrowser() {
         getWebDriver().quit();
     }
+
 }
