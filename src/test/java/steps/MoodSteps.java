@@ -44,7 +44,10 @@ public class MoodSteps {
     }
 
     @Step("Add Hug")
-    public MoodSteps addHug() {
+    public MoodSteps addHug(int moodRate, String comment) {
+        myUpdatesPage
+                .clickUpdateMood()
+                .updateMood(moodRate, comment);
         myUpdatesPage
                 .addHug();
         return this;

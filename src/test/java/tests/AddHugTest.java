@@ -10,6 +10,6 @@ public class AddHugTest extends BaseTest {
                 .login("lenagmailinator.com", "qwerty12345");
         moodSteps
                 .openMyMood()
-                .addHug();
+                .addHug(3, "comment foe Hug");
     }
 }
