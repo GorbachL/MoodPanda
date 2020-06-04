@@ -1,11 +1,18 @@
 package pages;
 
 import com.codeborne.selenide.Condition;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import utils.AllureUtils;
 
-import static com.codeborne.selenide.Selenide.$;
+import java.text.Format;
 
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selectors.byXpath;
+import static com.codeborne.selenide.Selenide.*;
+
+@Log4j2
 public class RateHappinessModal extends BasePage {
 
     private static final String COMMENT_CSS = "#TextBoxUpdateMoodTag";
@@ -43,11 +50,20 @@ public class RateHappinessModal extends BasePage {
         }
 
         $(COMMENT_CSS).click();
+        sleep(1000);
         $(COMMENT_CSS).sendKeys(comment);
+        $(COMMENT_CSS).shouldHave(Condition.value(comment));
+        log.info("User added comment");
+        sleep(1000);
+        log.info("Save comment");
+        $(byXpath("//*[@class='btn btn-sm btn-primary ButtonUpdate']")).click();
 
-        $(By.className(".ButtonUpdate")).click();
+        $(byText("Done")).click();
+        log.info("Mood Updated");
 
-        //нажать доне
+        refresh();
+        $(byText(comment)).shouldBe(Condition.visible);
+        log.info("Comment << " + comment + " >> should be displayed on the page");
         return this;
     }
 }
