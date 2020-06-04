@@ -18,7 +18,7 @@ public class BaseTest {
 
     @BeforeClass
     public void setupDriver() {
-        //Configuration.headless = true;
+        Configuration.headless = true;
         //Configuration.browser = "Safari";
         Configuration.startMaximized = true;
         Configuration.timeout = 20000;
