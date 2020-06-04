@@ -5,7 +5,7 @@ import pages.MyUpdatesPage;
 
 public class MoodSteps {
 
-    MyUpdatesPage myUpdatesPage;
+    private MyUpdatesPage myUpdatesPage;
 
     public MoodSteps() {
         myUpdatesPage = new MyUpdatesPage();
